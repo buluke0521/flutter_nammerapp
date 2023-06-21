@@ -6,9 +6,16 @@ class MaterialAppExample extends StatefulWidget{
 }
 
 class _MaterialAppExampleState extends State<MaterialAppExample>{
+  GlobalKey<NavigatorState> _navigatorKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      navigatorKey: _navigatorKey,
+      home: Center(
+        child: Text("MaterialApp"),
+      ),
+    );
   }
 
 }
