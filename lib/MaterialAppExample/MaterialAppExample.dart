@@ -64,6 +64,9 @@ class _MaterialAppExampleState extends State<MaterialAppExample>{
         print(setting.arguments);
         return MaterialPageRoute(builder: (_)=>B());
       },
+      navigatorObservers: [
+        MyObserver(),
+      ],
     );
   }
 }
@@ -115,5 +118,20 @@ class _BState extends State<B> {
     );
   }
 }
+
+//Observer used to watch Navigator actions
+class MyObserver extends NavigatorObserver{
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    print("==========");
+    print(previousRoute);
+    print(route);
+    print("==========");
+    super.didPush(route, previousRoute);
+  }
+
+}
+
 
 
