@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_code/InheritedWidget/InheritedCount.dart';
 import 'package:namer_app/MaterialAppExample/MaterialAppExample.dart';
 
+import 'InheritedWidgetExample/InheritedWidgetExample.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -44,9 +46,13 @@ class _MyHomePageState extends State<MyHomePage>{
   //we can use one list but two , to maintain title and page info
   List _pageList = [
     {
+      'title': 'InheritedWidgetExample',
+      'page': InheritedWidgetExample()
+    },
+    {
       'title': 'MaterialAppExample',
       'page': MaterialAppExample()
-    }
+    },
   ];
 
   //This method is return every time SetState is called
