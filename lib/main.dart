@@ -43,10 +43,10 @@ class MyHomePage extends StatefulWidget{
 class _MyHomePageState extends State<MyHomePage>{
   //we can use one list but two , to maintain title and page info
   List _pageList = [
-    MaterialAppExample(),
-  ];
-  List _titleList = [
-    "MaterialAppExample",
+    {
+      'title': 'MaterialAppExample',
+      'page': MaterialAppExample()
+    }
   ];
 
   //This method is return every time SetState is called
@@ -64,14 +64,14 @@ class _MyHomePageState extends State<MyHomePage>{
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => _pageList[index]
+                          builder: (_) => _pageList[index]['page']
                       ),
                   );
                 },
-                child: Text(_titleList[index]),
+                child: Text(_pageList[index]['title']),
             );
           },
-        itemCount: _titleList.length,
+        itemCount: _pageList.length,
       ),
     );
   }
