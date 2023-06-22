@@ -54,6 +54,7 @@ class WidgetA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //这里通过找到InheritedWidgetExample的state，获取Example中维护的_count数据
     var appState = context.findAncestorStateOfType<_InheritedWidgetExampleState>();
     return Text("local count from local state is :"+appState!._count.toString());
   }
@@ -65,6 +66,7 @@ class WidgetB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      //这里通过MyInheritedWidget，获取MyInheritedWidget中共享的那个数据
       MyInheritedWidget.of(context)!.count.toString(),
       style: TextStyle(
           color: Colors.green,
