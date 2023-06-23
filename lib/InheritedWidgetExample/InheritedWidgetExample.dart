@@ -32,6 +32,7 @@ class _InheritedWidgetExampleState extends State<InheritedWidgetExample> {
         ),
       ),
       body: Center(
+        //使用的时候，MyInheritedWidget 一定要在外层，这样内层的widgets才能共享到数据
         child: MyInheritedWidget(
           //here we link local data into InheritedWidget
           count: _count,
